@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - All That Glitters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF69B4',
+                        secondary: '#FFB6C1',
+                        accent: '#FFC0CB',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-pink-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-2xl font-semibold text-primary">All That Glitters</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">Home</a>
+                    <a href="products.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">Products</a>
+                    <a href="cart-new.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count ml-1">0</span>
+                    </a>
+                    <a href="login-final.html" class="text-primary font-semibold px-3 py-2 rounded-md login-btn">Login</a>
+                    <a href="signup.html" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-pink-600 signup-btn">Sign Up</a>
+                    <div class="hidden profile-btn"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Welcome Back!</h2>
+                <p class="mt-2 text-gray-600">Please sign in to your account</p>
+            </div>
+            <form id="loginForm" class="space-y-6" method="POST" onsubmit="handleLogin(event)">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                    <input type="email" id="email" name="email" required autocomplete="email"
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password"
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember-me" name="remember-me" 
+                               class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-700">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-primary hover:text-pink-600">Forgot password?</a>
+                </div>
+                <div>
+                    <button type="submit" 
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                        Sign in
+                    </button>
+                </div>
+                <div id="errorMessage" class="text-red-500 text-center hidden"></div>
+            </form>
+            <p class="mt-6 text-center text-sm text-gray-600">
+                Don't have an account? 
+                <a href="signup.html" class="font-medium text-primary hover:text-pink-600">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="static/js/auth_new.js"></script>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            Auth.login(email, password)
+                .then(() => {
+                    window.location.href = 'products.html';
+                })
+                .catch(error => {
+                    errorMessage.textContent = error.message;
+                    errorMessage.classList.remove('hidden');
+                });
+        }
+
+        // Check if user is already logged in
+        if (Auth.isLoggedIn()) {
+            window.location.href = 'products.html';
+        }
+    </script>
+</body>
+</html>
