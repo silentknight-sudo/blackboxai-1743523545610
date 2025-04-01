@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All That Glitters - Handcrafted Accessories & Gifts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF69B4',
+                        secondary: '#FFB6C1',
+                        accent: '#FFC0CB',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-pink-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-2xl font-semibold text-primary">All That Glitters</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">Home</a>
+                    <a href="products.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">Products</a>
+                    <a href="cart.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                    </a>
+                    <a href="login.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">Login</a>
+                    <a href="signup.html" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-pink-600">Sign Up</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2">
+                        <i class="fas fa-bars text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="index.html" class="block text-gray-700 hover:text-primary px-4 py-2">Home</a>
+            <a href="products.html" class="block text-gray-700 hover:text-primary px-4 py-2">Products</a>
+            <a href="cart.html" class="block text-gray-700 hover:text-primary px-4 py-2">Cart</a>
+            <a href="login.html" class="block text-gray-700 hover:text-primary px-4 py-2">Login</a>
+            <a href="signup.html" class="block text-gray-700 hover:text-primary px-4 py-2">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-pink-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="py-24">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
+                    Welcome to <span class="text-primary">All That Glitters</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Discover our handcrafted collection of scrunchies, hampers, and unique accessories
+                </p>
+                <a href="products.html" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-pink-600 transition duration-300">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Categories -->
+    <div class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Categories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Scrunchies -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.pexels.com/photos/6311475/pexels-photo-6311475.jpeg" alt="Scrunchies" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Scrunchies</h3>
+                    <p class="text-gray-600 mb-4">Handmade scrunchies in various patterns and fabrics</p>
+                    <a href="products.html#scrunchies" class="text-primary hover:text-pink-600">Shop Collection →</a>
+                </div>
+            </div>
+
+            <!-- Hampers -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.pexels.com/photos/6311476/pexels-photo-6311476.jpeg" alt="Hampers" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Hampers</h3>
+                    <p class="text-gray-600 mb-4">Curated gift hampers for every occasion</p>
+                    <a href="products.html#hampers" class="text-primary hover:text-pink-600">Shop Collection →</a>
+                </div>
+            </div>
+
+            <!-- Return Gifts -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.pexels.com/photos/6311477/pexels-photo-6311477.jpeg" alt="Return Gifts" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Return Gifts</h3>
+                    <p class="text-gray-600 mb-4">Perfect gifts for your special occasions</p>
+                    <a href="products.html#return-gifts" class="text-primary hover:text-pink-600">Shop Collection →</a>
+                </div>
+            </div>
+
+            <!-- Accessories -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.pexels.com/photos/6311478/pexels-photo-6311478.jpeg" alt="Accessories" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Accessories</h3>
+                    <p class="text-gray-600 mb-4">Trendy accessories to complete your look</p>
+                    <a href="products.html#accessories" class="text-primary hover:text-pink-600">Shop Collection →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">All That Glitters</h3>
+                    <p class="text-gray-400">Your one-stop shop for beautiful accessories and gifts</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="shipping.html" class="text-gray-400 hover:text-white">Shipping Info</a></li>
+                        <li><a href="returns.html" class="text-gray-400 hover:text-white">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <form class="flex">
+                        <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-l-md w-full">
+                        <button class="bg-primary px-4 py-2 rounded-r-md hover:bg-pink-600">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 All That Glitters. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
