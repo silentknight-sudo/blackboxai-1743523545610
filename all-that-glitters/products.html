@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - All That Glitters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF69B4',
+                        secondary: '#FFB6C1',
+                        accent: '#FFC0CB',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-pink-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-2xl font-semibold text-primary">All That Glitters</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">Home</a>
+                    <a href="products.html" class="text-primary font-semibold px-3 py-2 rounded-md">Products</a>
+                    <a href="cart.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                    </a>
+                    <a href="login.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">Login</a>
+                    <a href="signup.html" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-pink-600">Sign Up</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2">
+                        <i class="fas fa-bars text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="index.html" class="block text-gray-700 hover:text-primary px-4 py-2">Home</a>
+            <a href="products.html" class="block text-primary font-semibold px-4 py-2">Products</a>
+            <a href="cart.html" class="block text-gray-700 hover:text-primary px-4 py-2">Cart</a>
+            <a href="login.html" class="block text-gray-700 hover:text-primary px-4 py-2">Login</a>
+            <a href="signup.html" class="block text-gray-700 hover:text-primary px-4 py-2">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Category Filter -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <button class="category-btn active bg-primary text-white px-6 py-2 rounded-full hover:bg-pink-600" data-category="all">
+                All Products
+            </button>
+            <button class="category-btn bg-white text-gray-700 px-6 py-2 rounded-full hover:bg-primary hover:text-white" data-category="scrunchies">
+                Scrunchies
+            </button>
+            <button class="category-btn bg-white text-gray-700 px-6 py-2 rounded-full hover:bg-primary hover:text-white" data-category="hampers">
+                Hampers
+            </button>
+            <button class="category-btn bg-white text-gray-700 px-6 py-2 rounded-full hover:bg-primary hover:text-white" data-category="return-gifts">
+                Return Gifts
+            </button>
+            <button class="category-btn bg-white text-gray-700 px-6 py-2 rounded-full hover:bg-primary hover:text-white" data-category="accessories">
+                Accessories
+            </button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Scrunchies -->
+            <div class="product-card" data-category="scrunchies">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://images.pexels.com/photos/6311475/pexels-photo-6311475.jpeg" alt="Floral Scrunchie" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Floral Scrunchie Set</h3>
+                        <p class="text-gray-600 mt-2">Set of 3 floral pattern scrunchies</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-primary font-semibold">$12.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded hover:bg-pink-600">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hampers -->
+            <div class="product-card" data-category="hampers">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://images.pexels.com/photos/6311476/pexels-photo-6311476.jpeg" alt="Birthday Hamper" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Birthday Celebration Hamper</h3>
+                        <p class="text-gray-600 mt-2">Complete birthday gift set</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-primary font-semibold">$49.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded hover:bg-pink-600">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Return Gifts -->
+            <div class="product-card" data-category="return-gifts">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://images.pexels.com/photos/6311477/pexels-photo-6311477.jpeg" alt="Return Gift Set" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Wedding Return Gift Set</h3>
+                        <p class="text-gray-600 mt-2">Elegant gift set for wedding guests</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-primary font-semibold">$29.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded hover:bg-pink-600">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accessories -->
+            <div class="product-card" data-category="accessories">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://images.pexels.com/photos/6311478/pexels-photo-6311478.jpeg" alt="Hair Clips" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Pearl Hair Clips Set</h3>
+                        <p class="text-gray-600 mt-2">Set of 5 elegant pearl hair clips</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-primary font-semibold">$15.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded hover:bg-pink-600">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More products... -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">All That Glitters</h3>
+                    <p class="text-gray-400">Your one-stop shop for beautiful accessories and gifts</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="shipping.html" class="text-gray-400 hover:text-white">Shipping Info</a></li>
+                        <li><a href="returns.html" class="text-gray-400 hover:text-white">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <form class="flex">
+                        <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-l-md w-full">
+                        <button class="bg-primary px-4 py-2 rounded-r-md hover:bg-pink-600">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 All That Glitters. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Category filter
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active', 'bg-primary', 'text-white'));
+                categoryButtons.forEach(btn => btn.classList.add('bg-white', 'text-gray-700'));
+                
+                // Add active class to clicked button
+                button.classList.add('active', 'bg-primary', 'text-white');
+                button.classList.remove('bg-white', 'text-gray-700');
+
+                const category = button.dataset.category;
+
+                // Show/hide products based on category
+                productCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
